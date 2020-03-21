@@ -1,0 +1,337 @@
+@import "shortstyles.less";
+
+/*PROPS*/
+@color-left: #333333;
+@color-right: #f1f1f1;
+@blue: rgba(83, 152, 190, 1);
+@yellow: rgba(242, 205, 93, 1);
+@orange: rgba(222, 165, 75, 1);
+@bgBlue: #162c3e;
+@bgBluer: rgb(23, 49, 70);
+
+.navFont () {
+  font-family: "Cormorant", serif;
+}
+.titleFont () {
+  font-family: "Montserrat", cursive;
+}
+.defaultFont () {
+  font-family: "Lora", serif;
+}
+
+/**/
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: @bgBluer;
+  height: 100%;
+
+  div#___gatsby {
+    height: 100%;
+    div {
+      height: 100%;
+    }
+  }
+}
+
+/*ANIMATION*/
+@keyframes expendContainer {
+  0% {
+    width: 250px;
+    margin-left: -125px;
+  }
+  100% {
+    width: 50%;
+    margin-left: 0px;
+  }
+}
+@keyframes moveNavigation {
+  0% {
+    left: 20px;
+  }
+  100% {
+    left: -180px;
+  }
+}
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*CLASS*/
+.leftContent () {
+  .text {
+    margin-left: 340px;
+  }
+}
+.rightContent () {
+}
+
+/*STYLES*/
+div#main {
+  box-sizing: content-box;
+  //.boxShadowBlack();
+  transition-property: all;
+  transition-duration: 1;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  header {
+    height: 100%;
+    color: @yellow;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(125, 185, 232, 0) 0%,
+        rgba(30, 60, 73, 0) 60%,
+        rgba(23, 49, 70, 1) 100%
+      ),
+      url("../images/header-bg.jpg");
+    background-size: cover;
+    background-position: bottom;
+    margin-top: 0px;
+    padding-top: 1px;
+    position: relative;
+
+    div.title {
+      height: 100%;
+      text-align: center;
+      margin-bottom: 100px;
+      position: relative;
+      padding-top: 12%;
+      box-sizing: border-box;
+
+      h1 {
+        .titleFont();
+        font-size: 96px;
+        font-weight: 600;
+        color: rgba(227, 229, 235, 1);
+        text-shadow: 0px 0px 3px #111111;
+        text-transform: uppercase;
+        opacity: 0.4;
+
+        @media only screen and (max-width: 960px) {
+          font-size: 72px;
+        }
+      }
+      h2 {
+        .navFont();
+        width: 200px;
+        padding: 10px;
+        background-color: #ffffff;
+        .boxShadowBlack();
+        margin-left: auto;
+        margin-right: auto;
+        color: @bgBluer;
+        z-index: 2;
+        display: relative;
+
+        div.pango {
+          position: absolute;
+          left: 50%;
+          height: 171px;
+          height: 171px;
+          margin-top: -32px;
+          transform: rotate(-5deg);
+          z-index: 99;
+        }
+      }
+
+      div.scroll {
+        background-image: url("../images/np_scroll-down.png");
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        width: 60px;
+        height: 80px;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        margin-left: -30px;
+        opacity: 0.5;
+        z-index: 1;
+      }
+    }
+  }
+
+  nav {
+    display: none;
+    a {
+      display: block;
+      color: @blue;
+      margin-bottom: 15px;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: 8px;
+      padding-right: 8px;
+      box-sizing: border-box;
+    }
+  }
+
+  #container {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(
+      to bottom,
+      rgba(23, 49, 70, 1) 0%,
+      rgba(16, 33, 56, 1) 100%
+    );
+
+    padding-bottom: 20px;
+  }
+
+  section.contentPart {
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    div.content {
+      width: 900px;
+
+      div.image {
+        z-index: 1;
+        .boxShadowBlack(0px, 0px, 12px, 2px, 0.4);
+        width: 320px;
+        height: 320px;
+        img {
+          width: 320px;
+          height: 320px;
+        }
+        img.pangolin {
+          height: 240px;
+          position: absolute;
+          left: 5px;
+          top: 150px;
+          transform: rotate(-12deg);
+        }
+        position: absolute;
+      }
+      div.text {
+        position: relative;
+        padding: 30px;
+        width: 480px;
+        z-index: 99;
+        box-sizing: border-box;
+        //@x: 0px, @y: 0px, @blur: 4px, @size:1px, @alpha: 0.3
+        .boxShadowBlack(0px, 0px, 12px, 2px, 0.4);
+        background-color: rgb(241, 237, 232);
+        color: rgb(37, 36, 35);
+        .defaultFont();
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.4em;
+
+        h2 {
+          .navFont();
+          font-weight: 400;
+          font-size: 32px;
+        }
+        h3 {
+          .navFont();
+          font-weight: 800;
+          font-size: 48px;
+          margin: 0px;
+          margin-bottom: 20px;
+          margin-top: 10px;
+        }
+
+        .infoLink {
+          display: block;
+          a {
+            background-color: #162c3e;
+            color: #f1f1f1;
+            text-decoration: none;
+          }
+        }
+        .adentum {
+          font-style: italic;
+          font-weight: 600;
+          margin-top: -10px;
+          margin-bottom: 20px;
+        }
+      }
+
+      &.intro {
+        margin-left: 4%;
+        .leftContent();
+
+        div.image {
+          left: 60px;
+          top: 50px;
+        }
+      }
+      &.info {
+        margin-left: 0%;
+        .rightContent();
+
+        div.image {
+          left: 460px;
+          top: 180px;
+        }
+      }
+      &.transports {
+        margin-left: 3%;
+        .leftContent();
+
+        div.image {
+          left: 70px;
+          top: 80px;
+        }
+      }
+      &.hebergements {
+        margin-left: 1%;
+        .rightContent();
+        div.image {
+          left: 460px;
+          top: 60px;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 960px) {
+      width: 100%;
+
+      div.content {
+        width: 100%;
+        margin: 0px !important;
+        padding-top: 220px;
+
+        div.image {
+          left: 50% !important;
+          margin-left: -200px;
+          //bottom: 0px !important;
+          top: 0px !important;
+          width: 240px;
+          height: 240px;
+          img {
+            width: 240px;
+            height: 240px;
+          }
+          img.pangolin {
+            height: auto;
+          }
+        }
+        div.text {
+          width: 80%;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          h3 {
+            .navFont();
+            font-size: 38px;
+          }
+        }
+      }
+    }
+  }
+}
