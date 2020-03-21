@@ -101,6 +101,10 @@ div#main {
     padding-top: 1px;
     position: relative;
 
+    @media only screen and (max-width: 960px) {
+      padding-bottom: 600px;
+    }
+
     div.title {
       height: 100%;
       text-align: center;
@@ -138,10 +142,18 @@ div#main {
           position: absolute;
           left: 50%;
           height: 171px;
-          height: 171px;
           margin-top: -32px;
           transform: rotate(-5deg);
           z-index: 99;
+
+          @media only screen and (max-width: 960px) {
+            width: 300px;
+            margin-left: -150px;
+            img {
+              width: 300px;
+              height: auto;
+            }
+          }
         }
       }
 
@@ -305,7 +317,7 @@ div#main {
       div.content {
         width: 100%;
         margin: 0px !important;
-        padding-top: 220px;
+        padding-top: 300px;
 
         div.image {
           left: 50% !important;
@@ -320,7 +332,10 @@ div#main {
           }
           img.pangolin {
             height: auto;
+            margin-left: 80px;
+            margin-top: -20px;
           }
+          z-index: 100;
         }
         div.text {
           width: 80%;
