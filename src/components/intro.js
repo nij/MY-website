@@ -28,7 +28,7 @@ On espère aussi que cette annulation ne sera pas trop compliquée à gérer pou
           Et soyez assurés que l’on reviendra vers vous quand nous aurons trouvé ou et quand célébrer notre mariage, toujours à venir et toujours avec vous.<br/>
 C’était important pour nous de le vivre avec les gens qui comptent, ça le sera d’autant plus quand tout ça sera terminé.
         </p>
-<p>On vous embrasse fort<br>Marina et Yann</p>
+<p>On vous embrasse fort<br/>Marina et Yann</p>
       </div>
     </div>
   </section>
